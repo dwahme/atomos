@@ -1,5 +1,7 @@
 use crate::common::{ID_MASK, ParticleID};
 
+const NUM_PHYSICS_PAGE: usize = 4;
+
 /// A page holding particle information
 /// Occupies exactly 4KB in memory
 #[derive(Debug)]
@@ -62,12 +64,12 @@ impl ParticlePage {
 
 #[derive(Debug)]
 pub(crate) struct PhysicsPage {
-    pub pages: [Page; 2]
+    pub pages: [Page; NUM_PHYSICS_PAGE]
 }
 
 impl PhysicsPage {
     /// Creates a new physics page 
-    pub fn new(maps: [Page; 2]) -> Self {
+    pub fn new(maps: [Page; NUM_PHYSICS_PAGE]) -> Self {
         PhysicsPage { pages: maps }
     }
 
