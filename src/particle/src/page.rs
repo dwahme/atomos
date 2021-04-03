@@ -1,16 +1,16 @@
-use crate::common::{ID_MASK, NUM_PHYSICS_PAGE, ParticleID};
+use crate::common::{ID_MASK, NUM_PHYSICS_PAGE, MAX_PARTICLES, ParticleID};
 
 /// A page holding particle information
 /// Occupies exactly 4KB in memory
 #[derive(Debug, Copy, Clone)]
 pub struct Page {
     /// The ID of the particle
-    pub map: [u8; 4096],
+    pub map: [u8; MAX_PARTICLES],
 }
 
 impl Page {
     /// Create a new page
-    pub fn new(map: &[u8; 4096]) -> Self {
+    pub fn new(map: &[u8; MAX_PARTICLES]) -> Self {
         Page { map: map.clone() }
     }
 
@@ -35,7 +35,7 @@ pub struct ParticlePage {
 
 impl ParticlePage {
     /// Create a new page
-    pub fn new(map: &[u8; 4096]) -> Self {
+    pub fn new(map: &[u8; MAX_PARTICLES]) -> Self {
         ParticlePage { page: Page::new(map) }
     }
 

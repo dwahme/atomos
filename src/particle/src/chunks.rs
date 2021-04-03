@@ -1,4 +1,4 @@
-use crate::common::NUM_PHYSICS_PAGE;
+use crate::common::{NUM_PHYSICS_PAGE, MAX_PARTICLES};
 use crate::page::{Page, ParticlePage, PhysicsPage};
 use crate::particle::Particle;
 use std::sync::{Arc, RwLock};
@@ -21,8 +21,8 @@ impl Chunks {
         let mut physics_pages = Vec::new();
 
         for _ in 0..(MAX_X * MAX_Y * MAX_Z) {
-            particle_pages.push(Arc::new(RwLock::new(ParticlePage::new(&[0; 4096]))));
-            physics_pages.push(Arc::new(RwLock::new(PhysicsPage::new([Page::new(&[0; 4096]); NUM_PHYSICS_PAGE]))));
+            particle_pages.push(Arc::new(RwLock::new(ParticlePage::new(&[0; MAX_PARTICLES]))));
+            physics_pages.push(Arc::new(RwLock::new(PhysicsPage::new([Page::new(&[0; MAX_PARTICLES]); NUM_PHYSICS_PAGE]))));
         }
 
         Chunks { particle_pages, physics_pages }
