@@ -28,7 +28,7 @@ impl Page {
 
 /// A Page storing particle data
 #[derive(Debug)]
-pub(crate) struct ParticlePage {
+pub struct ParticlePage {
     /// The page holding the list of particles
     pub page: Page,
 }
@@ -61,7 +61,7 @@ impl ParticlePage {
 }
 
 #[derive(Debug)]
-pub(crate) struct PhysicsPage {
+pub struct PhysicsPage {
     pub pages: [Page; NUM_PHYSICS_PAGE]
 }
 

@@ -8,7 +8,7 @@ const MAX_Y: usize = 2;
 const MAX_Z: usize = 2;
 
 /// The big storage for all the particles that are being tracked
-pub(crate) struct Chunks {
+pub struct Chunks {
     /// All the pages that make up the chunks
     particle_pages: Vec<Arc<RwLock<ParticlePage>>>,
     physics_pages: Vec<Arc<RwLock<PhysicsPage>>>,

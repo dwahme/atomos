@@ -1,7 +1,7 @@
 use crate::common::ParticleID;
 
 #[derive(Debug, Copy, Clone)]
-pub(crate) struct Particle {
+pub struct Particle {
     // The ID of the particle
     pub id: ParticleID,
 
