@@ -1,4 +1,4 @@
-use std::mem::size_of;
+use crate::particle::ParticleID;
 
 const ID_MASK: u8 = 0b00111111;
 
@@ -42,7 +42,7 @@ impl ParticlePage {
     }
 
     /// Set a particle at index 
-    pub fn set_particle(&mut self, index: usize, particle: u8) {
+    pub fn set_particle(&mut self, index: usize, particle: ParticleID) {
         self.page.map[index] = particle;
     }
 
@@ -52,7 +52,7 @@ impl ParticlePage {
     }
 
     /// Get a particle ID at index 
-    pub fn set_particle_id(&mut self, idx: usize, id: u8) {
+    pub fn set_particle_id(&mut self, idx: usize, id: ParticleID) {
         let old = self.page.map[idx] & ID_MASK;
 
         // Keep the metadata

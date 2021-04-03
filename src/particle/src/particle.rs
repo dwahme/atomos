@@ -1,8 +1,10 @@
 
+pub type ParticleID = u8;
+
 #[derive(Debug, Copy, Clone)]
 pub(crate) struct Particle {
     // The ID of the particle
-    pub id: u8,
+    pub id: ParticleID,
 
     // Physical properties
     pub mass: u32,
@@ -14,7 +16,7 @@ pub(crate) struct Particle {
 
 impl Particle {
 
-    fn new(id: u8, mass: u32, color: &[u8; 4], mu: u32, boiling_point: u32, melting_point: u32) -> Self {
+    fn new(id: ParticleID, mass: u32, color: &[u8; 4], mu: u32, boiling_point: u32, melting_point: u32) -> Self {
         Particle {
             id,
             mass,
