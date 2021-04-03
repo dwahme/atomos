@@ -60,10 +60,10 @@ impl Object {
         }
     }
 
-    /// Moves an object
-    pub fn r#move(&mut self, chunks: &[Page]) {
-        for (c_id, o_id) in self.chunk_ids.into_iter() {
-            // chunk_move(chunks, c_id, o_id, &self.velocities)
-        }
-    }
+    // /// Moves an object
+    // pub fn r#move(&mut self, chunks: &[Page]) {
+    //     for (c_id, o_id) in self.chunk_ids.into_iter() {
+    //         // chunk_move(chunks, c_id, o_id, &self.velocities)
+    //     }
+    // }
 }
