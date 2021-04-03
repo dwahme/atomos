@@ -9,3 +9,6 @@ edition = "2018"
 [dependencies]
 particle = { path = "../particle" }
 vulkano = "0.22.0"
+vulkano-shaders = "0.22.0"
+vulkano-win = "0.22.0"
+winit = "0.24.0"

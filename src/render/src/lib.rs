@@ -1,3 +1,6 @@
+#[macro_use]
+pub mod render;
+
 #[cfg(test)]
 mod tests {
     #[test]
