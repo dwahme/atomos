@@ -1,3 +1,5 @@
+mod minifloat;
+
 #[cfg(test)]
 mod tests {
     #[test]
