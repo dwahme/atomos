@@ -2,8 +2,8 @@ use std::collections::HashMap;
 use crate::common::ParticleID;
 use crate::particle::Particle;
 
-fn main() {
-    let mut types = HashMap::new();
+fn init_types() -> HashMap<ParticleID, Particle> {
+    let mut types: HashMap<ParticleID, Particle> = HashMap::new();
 
     // void
     types.insert(0, Particle::new(0, 0, &[0, 0, 0, 255], 0, 0));
@@ -20,4 +20,6 @@ fn main() {
 
     // iron (cast)
     types.insert(4, Particle::new(4, 56, &[130, 130, 130, 255], 2773, 1473,));
+
+    types
 }

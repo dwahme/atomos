@@ -1,6 +1,6 @@
 use std::collections::HashMap;
-use particle::common::{ChunkID, ObjectID, ParticleID, Dir};
-use crate::page::Page;
+use particle::common::{ChunkID, ObjectID, ParticleID};
+use particle::page::Page;
 
 /// An object made up on many particles
 /// Can span multiple chunks
@@ -19,9 +19,9 @@ pub(crate) struct Object {
 
 impl Object {
 
-    pub fn new() -> Self {
-        Object { chunk_ids: HashMap::new(), total_mass: 0, velocities: [0.0; 3] }
-    }
+    // pub fn new() -> Self {
+    //     Object { chunk_ids: HashMap::new(), total_mass: 0, velocities: [0.0; 3] }
+    // }
 
     /// Registers a particle with an object
     /// Creates a new ObjectID for the chunk if necessary

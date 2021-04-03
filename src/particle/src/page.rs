@@ -1,10 +1,8 @@
-use crate::common::{ID_MASK, ParticleID};
-
-const NUM_PHYSICS_PAGE: usize = 4;
+use crate::common::{ID_MASK, NUM_PHYSICS_PAGE, ParticleID};
 
 /// A page holding particle information
 /// Occupies exactly 4KB in memory
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone)]
 pub struct Page {
     /// The ID of the particle
     pub map: [u8; 4096],
