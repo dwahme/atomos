@@ -1,3 +1,5 @@
+#[macro_use]
+mod object;
 mod minifloat;
 
 #[cfg(test)]

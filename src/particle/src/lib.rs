@@ -1,6 +1,6 @@
 #[macro_use]
-mod common;
-mod object;
-mod page;
-mod particle;
-mod types;
+pub mod common;
+pub mod chunks;
+pub mod page;
+pub mod particle;
+pub mod types;
