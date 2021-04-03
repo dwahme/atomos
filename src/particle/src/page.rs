@@ -1,6 +1,4 @@
-use crate::common::ParticleID;
-
-const ID_MASK: u8 = 0b00111111;
+use crate::common::{ID_MASK, ParticleID};
 
 /// A page holding particle information
 /// Occupies exactly 4KB in memory
