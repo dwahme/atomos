@@ -1,5 +1,4 @@
-
-pub type ParticleID = u8;
+use crate::common::ParticleID;
 
 #[derive(Debug, Copy, Clone)]
 pub(crate) struct Particle {

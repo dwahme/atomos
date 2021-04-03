@@ -1,4 +1,4 @@
-use crate::particle::ParticleID;
+use crate::common::ParticleID;
 
 const ID_MASK: u8 = 0b00111111;
 
