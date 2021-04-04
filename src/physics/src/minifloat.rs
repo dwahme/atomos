@@ -14,12 +14,26 @@ impl Minifloat {
         }
 
         Minifloat {
-            value: (f / 0.125) as i8
+            value: (f * 8) as i8
+        }
+    }
+
+    pub fn new_from_i8(i: i8) -> Minifloat {
+        if (i < -128 || i > 127) {
+            panic!("out of bounds value received for new");
+        }
+
+        Minifloat {
+            value: i
         }
     }
 
     pub fn to_float(&self) -> f32 {
         self.value as f32 * 0.125
+    }
+
+    pub fn to_u8(&self) -> u8 {
+        self.value as u8
     }
 }
 

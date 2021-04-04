@@ -24,6 +24,12 @@ impl Particle {
             melting_point,
         }
     }
+
+    pub fn to_particle_page_data(&self) -> u8 {
+        // TODO: Might have to worry about groups
+        self.id
+    }
+
 }
 
 #[cfg(test)]
