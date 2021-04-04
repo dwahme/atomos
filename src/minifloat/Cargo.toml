@@ -1,12 +1,9 @@
-
 [package]
-name = "particle"
+name = "minifloat"
 version = "0.1.0"
-authors = ["Dawson Whitehead <dwahme1@gmail.com>"]
+authors = ["yvesshum <yvesshum1210@gmail.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bitmaps = "2.1.0"
-minifloat = { path = "../minifloat"}

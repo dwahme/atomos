@@ -1,17 +1,13 @@
-use crate::common::{NUM_PHYSICS_PAGE, MAX_PARTICLES};
+use crate::common::{NUM_PHYSICS_PAGE, MAX_PARTICLES, MAX_X, MAX_Y, MAX_Z};
 use crate::page::{Page, ParticlePage, PhysicsPage};
 use crate::particle::Particle;
 use std::sync::{Arc, RwLock};
 
-const MAX_X: usize = 2;
-const MAX_Y: usize = 2;
-const MAX_Z: usize = 2;
-
 /// The big storage for all the particles that are being tracked
 pub struct Chunks {
     /// All the pages that make up the chunks
-    particle_pages: Vec<Arc<RwLock<ParticlePage>>>,
-    physics_pages: Vec<Arc<RwLock<PhysicsPage>>>,
+    pub particle_pages: Vec<Arc<RwLock<ParticlePage>>>,
+    pub physics_pages: Vec<Arc<RwLock<PhysicsPage>>>,
 }
 
 impl Chunks {

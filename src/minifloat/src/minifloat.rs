@@ -14,7 +14,7 @@ impl Minifloat {
         }
 
         Minifloat {
-            value: (f * 8) as i8
+            value: (f * 8 as f32) as i8
         }
     }
 

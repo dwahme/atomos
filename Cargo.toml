@@ -10,3 +10,4 @@ edition = "2018"
 particle = { path = "src/particle" }
 physics = { path = "src/physics" }
 render = { path = "src/render" }
+minifloat = { path = "src/minifloat" }

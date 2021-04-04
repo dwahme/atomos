@@ -1,5 +1,5 @@
 use crate::common::{ID_MASK, MASS_MASK, NUM_PHYSICS_PAGE, MAX_PARTICLES, ParticleID, MAX_PARTICLES_EDGE};
-use physics::Minifloat;
+use minifloat::minifloat::Minifloat;
 
 /// A page holding particle information
 /// Occupies exactly 4KB in memory
@@ -98,42 +98,42 @@ impl PhysicsPage {
     /// Returns the mass of a particle given an index
     pub fn get_mass(&self, x: usize, y: usize, z: usize) -> u8 {
         let idx = Page::get_idx_from_xyz(x, y, z);
-        self.pages[0][idx] & MASS_MASK
+        self.pages[0].map[idx] & MASS_MASK
     }
 
     // There's prob macros for this but whatever
 
     /// Returns a float velocity X of a particle given index
     pub fn get_vel_x(&self, idx: usize) -> f32 {
-        let data = self.pages[1][idx] as i8;
+        let data = self.pages[1].map[idx] as i8;
         Minifloat::new_from_i8(data).to_float()
     }
 
     /// Returns a float velocity Y of a particle given index
     pub fn get_vel_y(&self, idx: usize) -> f32 {
-        let data = self.pages[2][idx] as i8;
+        let data = self.pages[2].map[idx] as i8;
         Minifloat::new_from_i8(data).to_float()
     }
 
     /// Returns a float velocity Z of a particle given index
     pub fn get_vel_z(&self, idx: usize) -> f32 {
-        let data = self.pages[3][idx] as i8;
+        let data = self.pages[3].map[idx] as i8;
         Minifloat::new_from_i8(data).to_float()
     }
 
     /// Sets the velocity x of a particle given the index and velocity
     pub fn set_vel_x(&mut self, idx: usize, vel: f32) {
-        self.pages[1][idx] = Minifloat::new(vel).to_u8();
+        self.pages[1].map[idx] = Minifloat::new(vel).to_u8();
     }
 
     /// Sets the velocity y of a particle given the index and velocity
     pub fn set_vel_y(&mut self, idx: usize, vel: f32) {
-        self.pages[2][idx] = Minifloat::new(vel).to_u8();
+        self.pages[2].map[idx] = Minifloat::new(vel).to_u8();
     }
 
     /// Sets the velocity z of a particle given the index and velocity
     pub fn set_vel_z(&mut self, idx: usize, vel: f32) {
-        self.pages[3][idx] = Minifloat::new(vel).to_u8();
+        self.pages[3].map[idx] = Minifloat::new(vel).to_u8();
     }
 
 }
